@@ -1,0 +1,5 @@
+Objetivo 5
+[center]Selecione somente [color=#ff8503]carnes
+31,32,33,34,35,37,38
+1,2,3,4,5,6,7,8,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27
+[center]Você sabia que as carnes são fonte de proteínas que o nosso corpo precisa ? É através da alimentação delas que garantimos o desenvolvimento saudável para correr, pular, brincar e etc.

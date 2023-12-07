@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lovable_Clown.ogg-51bf5249bb45a38caeda490a6a76d2d3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musics/Lovable_Clown.ogg"
+dest_files=[ "res://.import/Lovable_Clown.ogg-51bf5249bb45a38caeda490a6a76d2d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

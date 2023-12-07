@@ -1,0 +1,130 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Components/TextBg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Cenario/Background2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Font/KGRedHands.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Font/soupofjustice.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Components/Play.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Cenario/SideB.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Cenario/SideA.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/End.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=3]
+size = 95
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 55
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 31
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="End" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="SideA" type="Sprite" parent="."]
+position = Vector2( 290, 399.998 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 7 )
+
+[node name="SideB" type="Sprite" parent="."]
+position = Vector2( 989, 399.998 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
+
+[node name="EndBackground" type="Sprite" parent="."]
+position = Vector2( 640, 357 )
+scale = Vector2( 0.992, 0.381 )
+texture = ExtResource( 1 )
+
+[node name="EndText" type="Label" parent="EndBackground"]
+margin_left = -265.993
+margin_top = -782.579
+margin_right = 251.007
+margin_bottom = -686.579
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1, 3 )
+custom_fonts/font = SubResource( 3 )
+text = "Fim de jogo"
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="EndBackground"]
+margin_left = -183.332
+margin_top = -475.579
+margin_right = 155.668
+margin_bottom = -409.579
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1, 2.6 )
+custom_fonts/font = SubResource( 8 )
+text = "Pontos: 500"
+align = 1
+valign = 1
+
+[node name="ContentText" type="RichTextLabel" parent="EndBackground"]
+visible = false
+margin_left = -584.0
+margin_top = -265.0
+margin_right = 580.0
+margin_bottom = 61.0
+rect_scale = Vector2( 1, 2.6 )
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]Parabéns!
+Você completou todas as fases e agora sabe um pouco mais sobre como os alimentos são importantes e positivos para o corpo.
+Ainda há muitas descobertas a serem feitas sobre o rico mundo da alimentação.
+Sempre continue seus estudos!"
+text = "Parabéns!
+Você completou todas as fases e agora sabe um pouco mais sobre como os alimentos são importantes e positivos para o corpo.
+Ainda há muitas descobertas a serem feitas sobre o rico mundo da alimentação.
+Sempre continue seus estudos!"
+scroll_active = false
+
+[node name="TimerText" type="Timer" parent="EndBackground/ContentText"]
+one_shot = true
+autostart = true
+
+[node name="EndButton" type="TouchScreenButton" parent="EndBackground"]
+visible = false
+position = Vector2( -201.477, 593.221 )
+scale = Vector2( 1, 2.6 )
+normal = ExtResource( 5 )
+
+[node name="ButtonText" type="Label" parent="EndBackground/EndButton"]
+margin_left = 0.00372314
+margin_top = 22.1309
+margin_right = 544.004
+margin_bottom = 109.131
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 2 )
+text = "Menu Principal"
+align = 1
+valign = 1
+
+[node name="TimerButton" type="Timer" parent="EndBackground/EndButton"]
+one_shot = true
+
+[connection signal="timeout" from="EndBackground/ContentText/TimerText" to="." method="_on_TimerText_timeout"]
+[connection signal="pressed" from="EndBackground/EndButton" to="." method="_on_EndButton_pressed"]
+[connection signal="timeout" from="EndBackground/EndButton/TimerButton" to="." method="_on_TimerButton_timeout"]

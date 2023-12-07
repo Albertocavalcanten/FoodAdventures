@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ponies_and_Balloons.ogg-391c1edd67f67472a09f0413b179f949.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musics/Ponies_and_Balloons.ogg"
+dest_files=[ "res://.import/Ponies_and_Balloons.ogg-391c1edd67f67472a09f0413b179f949.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

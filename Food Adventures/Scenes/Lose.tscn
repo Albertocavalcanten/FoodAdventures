@@ -1,0 +1,258 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Font/soupofjustice.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Components/TextBg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Components/Play.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Lose.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Components/Menu.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Font/KGRedHands.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=3]
+size = 95
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 55
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("LoseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 98, -514 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.470588 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("LoseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 98, 108 ), Vector2( 98, 767 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.470588 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("LoseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.004, -727 ), Vector2( 9.004, 7.145 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.470588 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("LoseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.004, 7.145 ), Vector2( 9.004, 733 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.470588 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("LoseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 98, -514 ), Vector2( 98, 108 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.470588 ) ]
+}
+
+[node name="Lose" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="LoseBackground" type="Sprite" parent="."]
+position = Vector2( 98, -514 )
+scale = Vector2( 0.992, 0.381 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="LoseText" type="Label" parent="LoseBackground"]
+margin_left = 422.0
+margin_top = 175.0
+margin_right = 803.0
+margin_bottom = 271.0
+rect_scale = Vector2( 1, 3 )
+custom_fonts/font = SubResource( 3 )
+text = "Perdeu"
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="LoseBackground"]
+margin_left = 442.0
+margin_top = 482.0
+margin_right = 781.0
+margin_bottom = 548.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1, 2.6 )
+custom_fonts/font = SubResource( 7 )
+text = "Pontos: 000"
+align = 1
+valign = 1
+
+[node name="AgainText" type="Label" parent="LoseBackground"]
+visible = false
+margin_left = 414.31
+margin_top = 847.388
+margin_right = 805.31
+margin_bottom = 958.388
+rect_scale = Vector2( 1, 2.6 )
+custom_fonts/font = SubResource( 8 )
+text = "Não desanime
+Tente novamente!"
+align = 1
+valign = 1
+
+[node name="AgainTimer" type="Timer" parent="LoseBackground/AgainText"]
+one_shot = true
+autostart = true
+
+[node name="MenuButton" type="TouchScreenButton" parent="LoseBackground"]
+position = Vector2( 75.157, 109.856 )
+scale = Vector2( 1, 2.6 )
+normal = ExtResource( 5 )
+
+[node name="AgainButton" type="TouchScreenButton" parent="LoseBackground"]
+position = Vector2( 417.335, 1550.8 )
+scale = Vector2( 1, 2.6 )
+normal = ExtResource( 3 )
+
+[node name="ButtonText" type="Label" parent="LoseBackground/AgainButton"]
+margin_left = 23.1852
+margin_top = 22.1309
+margin_right = 498.185
+margin_bottom = 109.131
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 2 )
+text = "Tente novamente"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color( 1, 1, 1, 0.470588 )
+
+[node name="LoseAnimation" type="AnimationPlayer" parent="."]
+autoplay = "show"
+anims/RESET = SubResource( 4 )
+anims/hide = SubResource( 5 )
+anims/in = SubResource( 9 )
+anims/out = SubResource( 10 )
+anims/show = SubResource( 6 )
+
+[connection signal="timeout" from="LoseBackground/AgainText/AgainTimer" to="." method="_on_AgainTimer_timeout"]
+[connection signal="pressed" from="LoseBackground/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="LoseBackground/AgainButton" to="." method="_on_AgainButton_pressed"]

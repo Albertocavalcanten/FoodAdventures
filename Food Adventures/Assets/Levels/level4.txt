@@ -1,0 +1,5 @@
+Objetivo 4
+[center]Selecione somente alimentos [color=#adecf1]derivados do leite
+28,29,30,36
+1,2,3,4,5,6,7,8,9,10,11,34,13,14,35,16,17,33,19,20,21,22,23,24,25,26,32,31
+[center]Manteiga contém vitamina D, o que é essencial para a saúde do ossos, vitamina A, que previne doenças do olho, fortalece o sistema imunológico e tem propriedades anticancerígenas, além de promover uma boa saúde à pele e as mucosas. O requeijão não possui tanto cálcio e protéinas, deve se ter atenção a quantidade de gordura, pois deve ser usado com moderação. Iogurte tem a função de regularizar o intestino, fortalecer os ossos por conter cálcio, rico em proteína, facilmente digerido. O Queijo minas contém cálcio que fortalece os ossos, possui menos gordura que os queijos amarelos e é saboroso.

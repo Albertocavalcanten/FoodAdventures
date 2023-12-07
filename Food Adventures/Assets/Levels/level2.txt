@@ -1,0 +1,5 @@
+Objetivo 2
+[center]Selecione somente frutas [color=#c90e0a]vermelhas
+10,11,12,13,14,15,23
+0,1,2,3,4,5,6,7,8,9,16,17,18,20,21,22,24,25,29,30,31,32,33,34,35
+[center]As frutas vermelhas são ricas em antioxidades e vitaminas B, que retardam o envelhecimento e ajudam no funcionamento das células do nosso corpo. Além de fornecem poucas calorias, as frutas vermelhas possuem composto bioativos, que são substâncias que contribuem para a saúde, prevenido doenças. Esses compostos que são a cor vermelha na fruta. Podendo também atuar na redução do colesterol, fortalecimento do sistema imunológico e na prevenção de doenças cardiovasculares.

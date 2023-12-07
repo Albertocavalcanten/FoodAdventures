@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Components/Play.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Cenario/Logo.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Cenario/SideB.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Cenario/Background.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Cenario/SideA.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Font/soupofjustice.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Components/Sound.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Musics/Ponies_and_Balloons.ogg" type="AudioStream" id=9]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Logo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "zoom"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Logo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.5, 0.5 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+use_filter = true
+font_data = ExtResource( 7 )
+
+[node name="MainMenu" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -29, -146.209 )
+scale = Vector2( 1.00731, 1.185 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="SideA" type="Sprite" parent="."]
+position = Vector2( 292.409, 399.998 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
+
+[node name="SideB" type="Sprite" parent="."]
+position = Vector2( 987.59, 399.978 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 641.162, 281.138 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="MenuAnimationLogo" type="AnimationPlayer" parent="."]
+autoplay = "zoom"
+anims/RESET = SubResource( 3 )
+anims/zoom = SubResource( 4 )
+
+[node name="MenuSoundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="PlayButton" type="TouchScreenButton" parent="."]
+position = Vector2( 515, 447 )
+scale = Vector2( 0.649351, 0.813084 )
+normal = ExtResource( 2 )
+
+[node name="ButtonText" type="Label" parent="PlayButton"]
+margin_left = 64.1425
+margin_top = 12.2989
+margin_right = 318.143
+margin_bottom = 103.299
+custom_fonts/font = SubResource( 2 )
+text = "Jogar"
+
+[node name="SoundButton" type="TouchScreenButton" parent="."]
+position = Vector2( 594, 587 )
+scale = Vector2( 0.8, 0.798165 )
+normal = ExtResource( 8 )
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="SoundButton" to="." method="_on_SoundButton_pressed"]

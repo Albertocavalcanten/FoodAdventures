@@ -1,0 +1,5 @@
+Objetivo 1
+[center]Selecione somente os alimentos [color=#11ad09]verdes
+0,1,2,3,4,5,6,7,8,9
+10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+[center]Os vegetais de coloração verde trazem muitos benefícios à saúde do nosso corpo. São ricos em vitamina A, vitamina B2, vitamina B5, vitamina C, vitamina K e minerais como cálcio, ferro.Contribuem com a saúde da pele, dos ossos, do cabelo e da visão.

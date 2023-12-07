@@ -1,0 +1,165 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Font/soupofjustice.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Components/TextBg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Components/Play.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Components/Cancel.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Components/Menu.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=3]
+size = 160
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PauseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 98, -514 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.470588 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PauseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 98, 108 ), Vector2( 98, 767 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.470588 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PauseBackground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 98, -514 ), Vector2( 98, 108 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.470588 ) ]
+}
+
+[node name="Pause" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 6 )
+
+[node name="PauseBackground" type="Sprite" parent="."]
+position = Vector2( 98, -514 )
+scale = Vector2( 0.849, 0.256 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="PauseText" type="Label" parent="PauseBackground"]
+margin_left = 213.24
+margin_top = 407.891
+margin_right = 1041.24
+margin_bottom = 567.891
+rect_scale = Vector2( 1, 3 )
+custom_fonts/font = SubResource( 3 )
+text = "Pausado"
+align = 1
+
+[node name="ReturnButton" type="TouchScreenButton" parent="PauseBackground"]
+position = Vector2( 1133.1, -109.105 )
+scale = Vector2( 1.17786, 3.90625 )
+normal = ExtResource( 4 )
+
+[node name="MenuButton" type="TouchScreenButton" parent="PauseBackground"]
+position = Vector2( 1.17785, -109.105 )
+scale = Vector2( 1.17786, 3.90625 )
+normal = ExtResource( 5 )
+
+[node name="ReplayButton" type="TouchScreenButton" parent="PauseBackground"]
+position = Vector2( 383.981, 1007.81 )
+scale = Vector2( 1.17786, 3.90625 )
+normal = ExtResource( 3 )
+
+[node name="ButtonText" type="Label" parent="PauseBackground/ReplayButton"]
+margin_left = 42.9953
+margin_top = 22.1309
+margin_right = 451.995
+margin_bottom = 109.131
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 2 )
+text = "Reiniciar"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color( 1, 1, 1, 0.470588 )
+
+[node name="PauseAnimation" type="AnimationPlayer" parent="."]
+autoplay = "show"
+anims/RESET = SubResource( 4 )
+anims/hide = SubResource( 5 )
+anims/show = SubResource( 6 )
+
+[connection signal="pressed" from="PauseBackground/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="PauseBackground/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="PauseBackground/ReplayButton" to="." method="_on_ReplayButton_pressed"]

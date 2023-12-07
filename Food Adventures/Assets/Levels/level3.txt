@@ -1,0 +1,5 @@
+Objetivo 3
+[center]Selecione somente alimentos [color=#e6ff08]da culinaria paraense
+16,17,18,19,20,21,22,3,24,25,26,27
+1,2,33,4,5,6,7,8,9,10,11,12,13,14,15,28,29,30,31,32
+[center]O Açaí fortalece o sistema imunológico (rico em vitamina C), previne o envelhecimento precoce (rico em antioxidantes flavonóides), melhora o funcionamento do intestino (rico em fibras). O Cupuaçu é fornecedor de energia, ação anti-inflamatória e promove maior saciedade. O Taperebá é fonte de cálcio,ferro e vitamina A,B e C, além de eficaz contra infecções e importante na função da retina. O Bacuri é rico em cálcio, fósforo e vitamina C, considerado anti-inflamatório e cicatrizante. A Manga é ricas em vitaminas A,B1,B2 e C. A Pupunha fortalece o sistema imunológico, faz bem para os olhos, melhora a digestão e auxilia no desenvolvimento ósseo.
